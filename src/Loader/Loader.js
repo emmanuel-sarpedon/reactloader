@@ -53,7 +53,34 @@ const Loader = (props) => {
     );
   }
 
+  // ELLIPSIS-FALL
   if (loaderType === "ellipsis-fall") {
+    const dots = [];
+    const numberOfDots = Math.max(numberOfItems, 4) || 4;
+
+    for (let i = 0; i < numberOfDots; i++) {
+      dots.push(
+        <div
+          className="dot"
+          style={{
+            animationDuration: `${animationDuration && animationDuration}`,
+            backgroundColor: `${color && color}`,
+            height: `${size && size}`,
+            width: `${size && size}`,
+          }}
+        ></div>
+      );
+    }
+    return (
+      <div className={loaderType}>
+        <div style={{ color: `${color && color}` }}>{text}</div>
+        <div>{dots}</div>
+      </div>
+    );
+  }
+
+  // ELLIPSIS-RUN-OFF
+  if (loaderType === "ellipsis-run-off") {
     const dots = [];
     const numberOfDots = Math.max(numberOfItems, 4) || 4;
 

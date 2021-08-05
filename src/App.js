@@ -5,7 +5,7 @@ import Loader from "./Loader/Loader";
 function App() {
   return (
     <div className="app">
-      <div>
+      <div /*spinner*/>
         <Loader
           color="white"
           type="spinner"
@@ -15,8 +15,7 @@ function App() {
         />
         <span>Spinner</span>
       </div>
-
-      <div>
+      <div /*audio wave*/>
         <Loader
           type="audio-wave"
           size="10px"
@@ -26,8 +25,7 @@ function App() {
         />
         <span>Audio wave</span>
       </div>
-
-      <div>
+      <div /*ellipsis-fall*/>
         <Loader
           type="ellipsis-fall"
           animationDuration="2s"
@@ -35,6 +33,15 @@ function App() {
           numberOfItems="5"
         />
         <span>Ellipsis fall</span>
+      </div>
+      <div /*ellipsis-run-off*/>
+        <Loader
+          type="ellipsis-run-off"
+          animationDuration="1s"
+          color="white"
+          numberOfItems="5"
+        />
+        <span>Ellipsis run off</span>
       </div>
     </div>
   );

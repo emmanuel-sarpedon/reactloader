@@ -117,3 +117,57 @@
     }
   }
 }
+
+.ellipsis-run-off {
+  display: flex;
+
+  > div {
+    display: flex;
+    align-items: flex-end;
+
+    .dot {
+      margin-bottom: 2.5px;
+      height: 5px;
+      width: 5px;
+      background-color: black;
+      border-radius: 100%;
+      margin-left: 5px;
+
+      &:first-child {
+        transform: scale(0);
+        animation: scale 1s linear infinite;
+      }
+
+      &:not(:first-child) {
+        transform: translateX(-10px);
+        animation: scale 1s linear infinite;
+      }
+
+      &:last-child {
+        animation: run 1s linear infinite;
+      }
+
+      @keyframes scale {
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes right {
+        100% {
+          transform: translateX(20px);
+        }
+      }
+
+      @keyframes run {
+        0% {
+          transform: translateX(-10px);
+        }
+        100% {
+          transform: translateX(100px);
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
