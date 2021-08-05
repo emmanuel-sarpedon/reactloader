@@ -1,12 +1,12 @@
 .spinner {
-  height: 1em;
-  width: 1em;
+  animation: rotation 0.8s linear infinite;
   border-left: 5px solid;
   border-right: 5px solid;
   border-bottom: 5px solid;
   border-top: white 5px solid;
   border-radius: 100%;
-  animation: rotation 0.8s linear infinite;
+  height: 1em;
+  width: 1em;
 
   @keyframes rotation {
     0% {
@@ -21,15 +21,16 @@
 
 .audio-wave {
   display: flex;
-  .bar {
-    width: 5px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: black;
-    animation: scale 0.8s linear infinite;
-    margin-left: 10px;
 
-    @keyframes scale {
+  .bar {
+    animation: scale-bar 0.8s linear infinite;
+    background-color: black;
+    border-radius: 10px;
+    height: 20px;
+    margin-left: 10px;
+    width: 5px;
+
+    @keyframes scale-bar {
       0% {
         transform: scaleY(1);
       }
@@ -62,6 +63,57 @@
     &:first-child,
     &:last-child {
       animation-delay: 0.33s;
+    }
+  }
+}
+
+.ellipsis-fall {
+  display: flex;
+
+  > div {
+    display: flex;
+    align-items: flex-end;
+
+    .dot {
+      margin-bottom: 2.5px;
+      height: 5px;
+      width: 5px;
+      background-color: black;
+      border-radius: 100%;
+      margin-left: 5px;
+
+      &:first-child {
+        transform: scale(0);
+        animation: scale 1s linear infinite;
+      }
+
+      &:not(:first-child) {
+        transform: translateX(-10px);
+        animation: scale 1s linear infinite;
+      }
+
+      &:last-child {
+        animation: fall 1s linear infinite;
+      }
+
+      @keyframes scale {
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      @keyframes right {
+        100% {
+          transform: translateX(20px);
+        }
+      }
+
+      @keyframes fall {
+        100% {
+          transform: translate(-10px, 50px);
+          opacity: 0;
+        }
+      }
     }
   }
 }

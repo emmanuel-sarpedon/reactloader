@@ -1,7 +1,8 @@
 import "./Loader.scss";
 
 const Loader = (props) => {
-  const { type, size, borderWidth, color, animationDuration, bar } = props;
+  const { type, size, borderWidth, color, animationDuration, numberOfItems } =
+    props;
 
   const loaderType = type || "spinner";
 
@@ -24,7 +25,7 @@ const Loader = (props) => {
   // AUDIO WAVE
   if (loaderType === "audio-wave") {
     const barDiv = [];
-    const numberOfBar = Math.max(bar, 5) || 5;
+    const numberOfBar = Math.max(numberOfItems, 5) || 5;
 
     for (let i = 0; i < numberOfBar; i++) {
       barDiv.push(
@@ -44,6 +45,32 @@ const Loader = (props) => {
       </div>
     );
   }
+
+  if (loaderType === "ellipsis-fall") {
+    const dots = [];
+    const numberOfDots = Math.max(numberOfItems, 4) || 4;
+
+    for (let i = 0; i < numberOfDots; i++) {
+      dots.push(
+        <div
+          className="dot"
+          style={{
+            animationDuration: `${animationDuration && animationDuration}`,
+            backgroundColor: `${color && color}`,
+            height: `${size && size}`,
+            width: `${size && size}`,
+          }}
+        ></div>
+      );
+    }
+    return (
+      <div className={loaderType}>
+        <div style={{ color: `${color && color}` }}>Loading</div>
+        <div>{dots}</div>
+      </div>
+    );
+  }
+  return <></>;
 };
 
 export default Loader;
