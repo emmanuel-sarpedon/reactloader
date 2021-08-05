@@ -1,10 +1,24 @@
 import "./Loader.scss";
 
 const Loader = (props) => {
-  const { type } = props;
+  const { type, size, borderWidth, color, animationDuration } = props;
 
-  if (type === "spinner") {
-    return <div className={type}></div>;
+  const loaderType = type || "spinner";
+
+  // SPINNER
+  if (loaderType === "spinner") {
+    return (
+      <div
+        className={loaderType}
+        style={{
+          height: `${size && size}`,
+          width: `${size && size}`,
+          color: `${color && color}`,
+          animationDuration: `${animationDuration && animationDuration}`,
+          borderWidth: `${borderWidth && borderWidth}`,
+        }}
+      ></div>
+    );
   }
 };
 
