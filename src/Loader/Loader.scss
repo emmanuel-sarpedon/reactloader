@@ -18,3 +18,50 @@
     }
   }
 }
+
+.audio-wave {
+  display: flex;
+  .bar {
+    width: 5px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: black;
+    animation: scale 0.8s linear infinite;
+    margin-left: 10px;
+
+    @keyframes scale {
+      0% {
+        transform: scaleY(1);
+      }
+
+      25% {
+        transform: scaleY(1.25);
+      }
+
+      50% {
+        transform: scaleY(2);
+      }
+
+      75% {
+        transform: scaleY(1.25);
+      }
+
+      100% {
+        transform: scaleY(1);
+      }
+    }
+
+    &:nth-child(1n) {
+      animation-delay: 0.5s;
+    }
+
+    &:nth-child(2n) {
+      animation-delay: 0.75s;
+    }
+
+    &:first-child,
+    &:last-child {
+      animation-delay: 0.33s;
+    }
+  }
+}
