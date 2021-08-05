@@ -9,6 +9,7 @@ const Loader = (props) => {
     animationDuration,
     numberOfItems,
     text,
+    reverse,
   } = props;
 
   const loaderType = type || "spinner";
@@ -17,11 +18,31 @@ const Loader = (props) => {
   if (loaderType === "spinner") {
     return (
       <div
-        className={loaderType}
+        className={
+          reverse ? `${loaderType} ${loaderType}--reverse` : loaderType
+        }
         style={{
           animationDuration: `${animationDuration && animationDuration}`,
           borderWidth: `${borderWidth && borderWidth}`,
           borderTopColor: color && `${color}`,
+          height: `${size && size}`,
+          width: `${size && size}`,
+        }}
+      ></div>
+    );
+  }
+
+  // ALTERNATIVE SPINNER
+  if (loaderType === "alternative-spinner") {
+    return (
+      <div
+        className={
+          reverse ? `${loaderType} ${loaderType}--reverse` : loaderType
+        }
+        style={{
+          animationDuration: `${animationDuration && animationDuration}`,
+          borderWidth: `${borderWidth && borderWidth}`,
+          borderColor: color && `rgba(0,0,0,0) ${color} ${color} ${color}`,
           height: `${size && size}`,
           width: `${size && size}`,
         }}
@@ -104,6 +125,7 @@ const Loader = (props) => {
       </div>
     );
   }
+
   return <></>;
 };
 

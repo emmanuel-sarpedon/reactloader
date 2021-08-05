@@ -14,6 +14,51 @@
       transform: rotate(360deg);
     }
   }
+
+  &--reverse {
+    animation: rotation-revert 0.8s linear infinite;
+    @keyframes rotation-revert {
+      0% {
+        transform: rotate();
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  }
+}
+
+.alternative-spinner {
+  animation: rotation 0.8s linear infinite;
+  border: solid;
+
+  border-radius: 100%;
+  height: 1em;
+  width: 1em;
+
+  @keyframes rotation {
+    0% {
+      transform: rotate();
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  &--reverse {
+    animation: rotation-revert 0.8s linear infinite;
+    @keyframes rotation-revert {
+      0% {
+        transform: rotate();
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  }
 }
 
 .audio-wave {

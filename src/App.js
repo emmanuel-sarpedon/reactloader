@@ -15,6 +15,38 @@ function App() {
         />
         <span>Spinner</span>
       </div>
+      <div /*reversed-spinner*/>
+        <Loader
+          color="white"
+          type="spinner"
+          size="20px"
+          borderWidth="5px"
+          animationDuration="0.8s"
+          reverse
+        />
+        <span>Reversed spinner</span>
+      </div>
+      <div /*alternative-spinner*/>
+        <Loader
+          color="white"
+          type="alternative-spinner"
+          size="20px"
+          borderWidth="5px"
+          animationDuration="0.8s"
+        />
+        <span>Alternative spinner</span>
+      </div>
+      <div /*reversed-alternative-spinner*/>
+        <Loader
+          color="white"
+          type="alternative-spinner"
+          size="20px"
+          borderWidth="5px"
+          animationDuration="0.8s"
+          reverse
+        />
+        <span>Reversed alternative spinner</span>
+      </div>
       <div /*audio wave*/>
         <Loader
           type="audio-wave"
