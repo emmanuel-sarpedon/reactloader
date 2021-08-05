@@ -5,7 +5,7 @@ import Loader from "./Loader/Loader";
 function App() {
   return (
     <div className="app">
-      <Loader />
+      <Loader type="spinner" />
     </div>
   );
 }
