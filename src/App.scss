@@ -1,0 +1,19 @@
+.app {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+
+  > div {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+
+    &:not(:first-child) {
+      margin-top: 20px;
+    }
+
+    span {
+      margin-left: 15px;
+    }
+  }
+}
