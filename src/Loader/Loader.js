@@ -1,8 +1,15 @@
 import "./Loader.scss";
 
 const Loader = (props) => {
-  const { type, size, borderWidth, color, animationDuration, numberOfItems } =
-    props;
+  const {
+    type,
+    size,
+    borderWidth,
+    color,
+    animationDuration,
+    numberOfItems,
+    text,
+  } = props;
 
   const loaderType = type || "spinner";
 
@@ -14,7 +21,7 @@ const Loader = (props) => {
         style={{
           animationDuration: `${animationDuration && animationDuration}`,
           borderWidth: `${borderWidth && borderWidth}`,
-          color: `${color && color}`,
+          borderTopColor: color && `${color}`,
           height: `${size && size}`,
           width: `${size && size}`,
         }}
@@ -65,7 +72,7 @@ const Loader = (props) => {
     }
     return (
       <div className={loaderType}>
-        <div style={{ color: `${color && color}` }}>Loading</div>
+        <div style={{ color: `${color && color}` }}>{text}</div>
         <div>{dots}</div>
       </div>
     );

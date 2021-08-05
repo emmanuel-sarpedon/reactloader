@@ -7,10 +7,10 @@ function App() {
     <div className="app">
       <div>
         <Loader
+          color="white"
           type="spinner"
           size="20px"
-          borderWidth="2px"
-          color="lightgrey"
+          borderWidth="5px"
           animationDuration="0.8s"
         />
         <span>Spinner</span>
@@ -19,10 +19,10 @@ function App() {
       <div>
         <Loader
           type="audio-wave"
-          size="30px"
-          color="lightgrey"
+          size="10px"
+          color="white"
           animationDuration="0.8s"
-          numberOfItems="8"
+          numberOfItems="3"
         />
         <span>Audio wave</span>
       </div>
@@ -31,7 +31,7 @@ function App() {
         <Loader
           type="ellipsis-fall"
           animationDuration="2s"
-          color="lightgrey"
+          color="white"
           numberOfItems="5"
         />
         <span>Ellipsis fall</span>
